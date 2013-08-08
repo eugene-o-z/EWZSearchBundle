@@ -36,19 +36,9 @@ All that is left to do is to update your AppKernel.php file, and register the ne
 // in AppKernel::registerBundles()
 $bundles = array(
     // ...
-   	new Azine\EmailBundle\EmailBundle(),
+   	new EWZ\Bundle\SearchBundle\EWZSearchBundle(),
     // ...
 );
-```
-
-Register the routes of the AzineEmailBundle:
-
-```
-// in app/config/routing.yml
-
-azine_email_bundle:
-    resource: "@AzineEmailBundle/Resources/config/routing.yml"
-    
 ```
 
 
