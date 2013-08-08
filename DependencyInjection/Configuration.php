@@ -22,7 +22,6 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
             	->arrayNode('indices')
- 					->isRequired()
              		->useAttributeAsKey('name')
              		->prototype('array')
 	 		            ->children()
