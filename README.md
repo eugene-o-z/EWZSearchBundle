@@ -172,7 +172,7 @@ $luceneSearchForBarIndex = $this->get('ewz_search.lucene.manager')->getIndex('in
 
 // with the old configuration-style
 $search = $this->get('ewz_search.lucene');
-´´´
+```
 
 ### Use the index
 To index an object use the following example:
