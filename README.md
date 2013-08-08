@@ -69,7 +69,7 @@ Next, update your vendors by running:
 $ ./bin/vendors
 ```
 
-Great! Now skip down to *Step 2*.
+Great! Now skip down to *Configure the autoloader*.
 
 ##### Submodules
 
@@ -122,7 +122,7 @@ public function registerBundles()
 ```
 
 ## Configuration
-Define you search indices in the config.yml. You can use the EWZSearchBundle with multiple search indices and with various Analyzers. 
+Define your search indices in the config.yml. You can use the EWZSearchBundle with multiple search indices and with various Analyzers. 
 
 **NOTE**: If you want to include numbers in your search queries then you'll need to set
 analyzer to Zend\Search\Lucene\Analysis\Analyzer\Common\TextNum\CaseInsensitive
@@ -130,6 +130,7 @@ See http://framework.zend.com/manual/en/zend.search.lucene.extending.html for mo
 
 For backward compatability reasons the old and new config both work.
 ### using one or more SearchIndex => new config
+
 ``` yaml
 # app/config/config.yml
 ewz_search:
@@ -144,7 +145,7 @@ ewz_search:
     # deprecated
     analyzer:             Zend\Search\Lucene\Analysis\Analyzer\Common\TextNum\CaseInsensitive
     path:                 %kernel.root_dir%/cache/%kernel.environment%/lucene/index
-
+```
 
 ### using only one SearchIndex => old config
 ``` yaml
@@ -160,7 +161,7 @@ Congratulations! You're ready!
 ### Getting the index
 Depending on you configuration you can get access to the LuceneSearch object for your index in one of the following ways:
 
-´´´ php
+``` php
 <?php
 
 use EWZ\Bundle\SearchBundle\Lucene\LuceneSearch;
