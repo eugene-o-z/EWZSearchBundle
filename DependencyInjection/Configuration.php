@@ -15,7 +15,8 @@ class Configuration implements ConfigurationInterface
     /**
      * {@inheritDoc}
      */
-    public function getConfigTreeBuilder() {
+    public function getConfigTreeBuilder()
+    {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('ewz_search');
 
@@ -27,16 +28,15 @@ class Configuration implements ConfigurationInterface
 	 		            ->children()
 			            	->scalarNode('path')->defaultValue('%kernel.root_dir%/EwzLuceneIndices/%kernel.environment%/defaultIndex')->end()
 	 		                ->scalarNode('analyzer')->defaultValue('Zend\Search\Lucene\Analysis\Analyzer\Common\TextNum\CaseInsensitive')->end()
-	 		            ->end()//children
-	 				->end()// prototype
- 				->end()// arrayNode indices
+	 		            ->end()
+	 				->end()
+ 				->end()
 
  				// for BC reasons only
- 				->scalarNode('analyzer')->defaultValue('Zend\Search\Lucene\Analysis\Analyzer\Common\TextNum\CaseInsensitive')->info('deprecated')->end()
- 				->scalarNode('path')->defaultValue('%kernel.root_dir%/cache/%kernel.environment%/lucene/index')->info('deprecated')->end()
-
-	        ->end()//children
-	        ;
+                ->scalarNode('analyzer')->defaultValue('Zend\Search\Lucene\Analysis\Analyzer\Common\TextNum\CaseInsensitive')->end()
+                ->scalarNode('path')->defaultValue('%kernel.root_dir%/cache/%kernel.environment%/lucene/index')->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }
