@@ -25,7 +25,19 @@ class EWZSearchExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-        $container->setParameter('lucene.analyzer', $config['analyzer']);
-        $container->setParameter('lucene.index.path', $config['path']);
+        $container->setParameter('lucene.indices', $config['indices']);
+
+        // for set the parameters for the default search-index => for BC reasons & if there is only one index defined
+        if(array_key_exists('analyzer', $config)){
+	        $defaultIndexAnalyzer = $config['analyzer'];
+	        $defaultIndexPath = $config['path'];
+    	} else {
+    		$indices = array_values($config['indices']);
+    		$config = $indices[0];
+	        $defaultIndexAnalyzer = $config['analyzer'];
+	        $defaultIndexPath = $config['path'];
+       	}
+        $container->setParameter('lucene.analyzer', $defaultIndexAnalyzer);
+        $container->setParameter('lucene.index.path', $defaultIndexPath);
     }
 }
