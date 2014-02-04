@@ -22,6 +22,17 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+            	->arrayNode('indices')
+             		->useAttributeAsKey('name')
+             		->prototype('array')
+	 		            ->children()
+			            	->scalarNode('path')->defaultValue('%kernel.root_dir%/EwzLuceneIndices/%kernel.environment%/defaultIndex')->end()
+	 		                ->scalarNode('analyzer')->defaultValue('Zend\Search\Lucene\Analysis\Analyzer\Common\TextNum\CaseInsensitive')->end()
+	 		            ->end()
+	 				->end()
+ 				->end()
+
+ 				// for BC reasons only
                 ->scalarNode('analyzer')->defaultValue('Zend\Search\Lucene\Analysis\Analyzer\Common\TextNum\CaseInsensitive')->end()
                 ->scalarNode('path')->defaultValue('%kernel.root_dir%/cache/%kernel.environment%/lucene/index')->end()
             ->end()
