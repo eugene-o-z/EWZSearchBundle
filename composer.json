@@ -14,7 +14,7 @@
     ],
     "require": {
         "symfony/framework-bundle": "2.*",
-        "excelwebzone/zend-search": "dev-master"
+        "excelwebzone/zend-search": "v1.0.0"
     },
     "autoload": {
         "psr-0": { "EWZ\\Bundle\\SearchBundle": "" }
