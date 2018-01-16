@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": "2.*",
+        "symfony/framework-bundle": "^2.*",
         "excelwebzone/zend-search": "~1.0"
     },
     "autoload": {
