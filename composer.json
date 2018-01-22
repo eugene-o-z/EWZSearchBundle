@@ -2,7 +2,7 @@
     "name": "eugene-o-z/search-bundle",
     "description": "Integrates Zend Search Lucene into Symfony applications",
     "keywords": ["search", "lucene"],
-    "homepage": "https://github.com/excelwebzone/EWZSearchBundle",
+    "homepage": "https://github.com/eugene-o-z/EWZSearchBundle",
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": "~3.2",
+        "symfony/framework-bundle": "3.2.14",
         "excelwebzone/zend-search": "~1.0"
     },
     "autoload": {
