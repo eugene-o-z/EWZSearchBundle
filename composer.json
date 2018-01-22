@@ -1,5 +1,5 @@
 {
-    "name": "excelwebzone/search-bundle",
+    "name": "eugene-o-z/search-bundle",
     "description": "Integrates Zend Search Lucene into Symfony applications",
     "keywords": ["search", "lucene"],
     "homepage": "https://github.com/excelwebzone/EWZSearchBundle",
